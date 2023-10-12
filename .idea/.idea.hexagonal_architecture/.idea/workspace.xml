@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fb5d0758-6ade-4a0d-8c90-275cadfc27c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/global.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Application.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/AssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Exceptions/IllegalAccountStateException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Exceptions/ThresholdExceededException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Ports/Driven/IAccountLoad.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Ports/Driven/IAccountLock.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/Ports/Driven/IAccountUpdate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/GetAccountBalance/GetAccountBalanceQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/GetAccountBalance/GetAccountBalanceQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/MoneyTransferOptions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Account/Account.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Account/Activity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Account/ActivityWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Account/Money.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/AssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Domain.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/Exceptions/NoActivityException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Domain/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/AssemblyReference.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Domain/Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Domain/IAggregateRoot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Domain/ValueObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Ports/Driving/Handlers/ICommandHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Ports/Driving/Handlers/IQueryHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Ports/Driving/ICommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Ports/Driving/IQuery.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/SharedKernel/SharedKernel.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Application/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Application/SendMoneyCommand.Tests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Application/UnitTests.Application.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Common/AccountTestData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Common/ActivityTestData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Common/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Common/UnitTests.Common.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Domain/Account.Tests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Domain/ActivityWindow.Tests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Domain/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Domain/Money.Tests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Domain/UnitTests.Domain.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexagonal_architecture.sln" beforeDir="false" afterPath="$PROJECT_DIR$/hexagonal_architecture.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Application.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/AssemblyReference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/IllegalAccountStateException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Exceptions/ThresholdExceededException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Ports/Driven/IAccountLoad.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Ports/Driven/IAccountLock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Ports/Driven/IAccountUpdate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/UseCases/GetAccountBalance/GetAccountBalanceQuery.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/UseCases/GetAccountBalance/GetAccountBalanceQueryHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/UseCases/SendMoney/MoneyTransferOptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/UseCases/SendMoney/SendMoneyCommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/UseCases/SendMoney/SendMoneyCommandHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Account/Account.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Account/Activity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Account/ActivityWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Account/Money.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/AssemblyReference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Domain.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Exceptions/NoActivityException.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/AssemblyReference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Domain/Entity.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Domain/IAggregateRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Domain/ValueObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Ports/Driving/Handlers/ICommandHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Ports/Driving/Handlers/IQueryHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Ports/Driving/ICommand.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/Ports/Driving/IQuery.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedKernel/SharedKernel.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Application/Tests/GetAccountBalanceQuery.Tests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/UnitTests/Core/UnitTests.Application/GetAccountBalanceQuery.Tests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Application/Tests/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Application/Tests/Tests.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Arch/Tests/Base/ArchitectureElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/ArchitectureTests/Architecture.Tests/Base/ArchitectureElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Arch/Tests/Base/DomainElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/ArchitectureTests/Architecture.Tests/Base/DomainElement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Arch/Tests/DependencyTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/ArchitectureTests/Architecture.Tests/DependencyTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Arch/Tests/GlobalUsings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/test/ArchitectureTests/Architecture.Tests/GlobalUsings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Arch/Tests/Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/test/ArchitectureTests/Architecture.Tests/Architecture.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Common/Tests.Core/AccountTestData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Common/Tests.Core/ActivityTestData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Common/Tests.Core/Tests.Core.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Domain/Tests/Account.Tests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Domain/Tests/ActivityWindow.Tests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Domain/Tests/GlobalUsings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Domain/Tests/Money.Tests.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Domain/Tests/Tests.csproj" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34e54cf52b4a4c2b82645ccc3a46837e5e000/0f/2f145481/ProxyGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2Werz6ChxSik2ZfFRny5l9cZCIC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\AbderrahmanCheddir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\AbderrahmanCheddir\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\AbderrahmanCheddir\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb5d0758-6ade-4a0d-8c90-275cadfc27c4" name="Changes" comment="" />
+      <created>1697104148728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697104148728</updated>
+      <workItem from="1697104148735" duration="979000" />
+      <workItem from="1697105526221" duration="411000" />
+      <workItem from="1697106010713" duration="10218000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="241" />
+    <coverage-tree-state>
+      <expand />
+      <select />
+    </coverage-tree-state>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
