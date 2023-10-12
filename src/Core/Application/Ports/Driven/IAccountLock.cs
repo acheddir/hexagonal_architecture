@@ -1,6 +1,8 @@
-﻿namespace Me.Acheddir.Hexagonal.Application.Ports.Driven;
+﻿using Me.Acheddir.Hexagonal.SharedKernel.Ports.Driven;
 
-public interface IAccountLock
+namespace Me.Acheddir.Hexagonal.Application.Ports.Driven;
+
+public interface IAccountLock : IDrivenPort
 {
     Task LockAccountAsync(AccountId accountId, CancellationToken token);
     Task ReleaseAccountAsync(AccountId accountId, CancellationToken token);

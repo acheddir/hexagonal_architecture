@@ -1,6 +1,8 @@
-﻿namespace Me.Acheddir.Hexagonal.Application.Ports.Driven;
+﻿using Me.Acheddir.Hexagonal.SharedKernel.Ports.Driven;
 
-public interface IAccountUpdate
+namespace Me.Acheddir.Hexagonal.Application.Ports.Driven;
+
+public interface IAccountUpdate : IDrivenPort
 {
     Task UpdateActivitiesAsync(Account account, CancellationToken token);
 }
