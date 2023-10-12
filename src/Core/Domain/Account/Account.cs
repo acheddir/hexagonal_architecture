@@ -5,6 +5,7 @@ public class Account : Entity<AccountId>, IAggregateRoot
     private Money BaselineBalance { get; }
     public ActivityWindow ActivityWindow { get; }
 
+    // Used by Moq
     protected Account() : base(null)
     {
         BaselineBalance = Money.Of(0);

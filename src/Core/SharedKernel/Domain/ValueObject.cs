@@ -17,7 +17,7 @@ public abstract class ValueObject<T> where T : ValueObject<T>
 
     protected abstract int GetHashCodeInternal();
     
-    public static bool operator ==(ValueObject<T> a, ValueObject<T> b)
+    public static bool operator ==(ValueObject<T>? a, ValueObject<T>? b)
     {
         if (a is null && b is null)
             return true;
@@ -28,7 +28,7 @@ public abstract class ValueObject<T> where T : ValueObject<T>
         return a.Equals(b);
     }
 
-    public static bool operator !=(ValueObject<T> a, ValueObject<T> b)
+    public static bool operator !=(ValueObject<T>? a, ValueObject<T>? b)
     {
         return !(a == b);
     }
