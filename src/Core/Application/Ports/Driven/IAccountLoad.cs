@@ -4,5 +4,5 @@ namespace Me.Acheddir.Hexagonal.Application.Ports.Driven;
 
 public interface IAccountLoad : IDrivenPort
 {
-    Task<Account> LoadAccountAsync(AccountId requestAccountId, DateTime utcNow, CancellationToken token);
+    Task<Account> LoadAccountAsync(AccountId accountId, DateTime baselineDate, CancellationToken token);
 }

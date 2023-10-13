@@ -22,6 +22,7 @@ public sealed class Money : ValueObject<Money>
         _amount = amount.Value;
     }
 
+    public long Amount => (long)_amount;
     protected override bool EqualsInternal(Money other) => _amount == other._amount;
     protected override int GetHashCodeInternal() => HashCode.Combine(_amount) ^ 365;
     public override string ToString() => _amount.ToString();

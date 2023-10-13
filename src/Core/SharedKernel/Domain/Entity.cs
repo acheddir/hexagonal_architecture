@@ -2,8 +2,12 @@
 
 public abstract class Entity<T>
 {
+    private readonly List<DomainEvent> _domainEvents = new();
+
     protected Entity() { }
-    
+
+    public IReadOnlyCollection<DomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
     protected Entity(T? id)
     {
         Id = id;
@@ -44,5 +48,20 @@ public abstract class Entity<T>
     public override int GetHashCode()
     {
         return Id is not null ? Id.GetHashCode() : default;
+    }
+    
+    public void AddDomainEvent(DomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
+
+    public void RemoveDomainEvent(DomainEvent domainEvent)
+    {
+        _domainEvents.Remove(domainEvent);
+    }
+
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
     }
 }

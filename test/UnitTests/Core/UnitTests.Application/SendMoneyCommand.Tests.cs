@@ -22,10 +22,7 @@ public class SendMoneyCommandTests
     public void GivenNullSourceAccountId_WhenSendMoneyCommandIsIssued_ThenShouldThrowValidationException()
     {
         // Arrange
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = null
-        };
+        var command = new SendMoneyCommand(null, null, null);
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -42,11 +39,7 @@ public class SendMoneyCommandTests
     public void GivenNullTargetAccountId_WhenSendMoneyCommandIsIssued_ThenShouldThrowValidationException()
     {
         // Arrange
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = null
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, null, null);
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -63,12 +56,8 @@ public class SendMoneyCommandTests
     public void GivenNullAmount_WhenSendMoneyCommandIsIssued_ThenShouldThrowValidationException()
     {
         // Arrange
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = null
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, null);
+
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
             _accountLockMock.Object,
@@ -85,12 +74,7 @@ public class SendMoneyCommandTests
         GivenAmountIsGreaterThanMaximumThreshold_WhenSendMoneyCommandIsIssued_ThenShouldThrowThresholdExceededException()
     {
         // Arrange
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = Money.Of(1200)
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, Money.Of(1200));
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -111,12 +95,7 @@ public class SendMoneyCommandTests
         // Arrange
         SetupSourceAccount(null, _sourceAccountId);
 
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = Money.Of(100)
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, Money.Of(100));
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -137,12 +116,7 @@ public class SendMoneyCommandTests
         SetupSourceAccount(_sourceAccountId, _sourceAccountId);
         SetupTargetAccount(null, _targetAccountId);
 
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = Money.Of(100)
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, Money.Of(100));
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -166,12 +140,7 @@ public class SendMoneyCommandTests
 
         _sourceAccount.Setup(a => a.Withdraw(amount, _targetAccountId)).Returns(false);
 
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = amount
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, Money.Of(100));
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -199,12 +168,7 @@ public class SendMoneyCommandTests
         _sourceAccount.Setup(a => a.Withdraw(amount, _targetAccountId)).Returns(true);
         _targetAccount.Setup(a => a.Deposit(amount, _sourceAccountId)).Returns(false);
 
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = amount
-        };
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, amount);
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,
@@ -242,12 +206,8 @@ public class SendMoneyCommandTests
                 updatedAccountIds.Add(account.GetId()!);
             });
 
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = _sourceAccountId,
-            TargetAccountId = _targetAccountId,
-            Amount = amount
-        };
+        
+        var command = new SendMoneyCommand(_sourceAccountId, _targetAccountId, amount);
 
         var handler = new SendMoneyCommandHandler(
             _accountLoadMock.Object,

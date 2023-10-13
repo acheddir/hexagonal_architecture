@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace Me.Acheddir.Hexagonal.Rest.Controllers.Base;
+﻿namespace Me.Acheddir.Hexagonal.Rest.Controllers.Base;
 
 [ApiController]
 public class ApiControllerBase : ControllerBase

@@ -29,7 +29,7 @@ public class GetAccountBalanceQueryTests
                     It.IsAny<CancellationToken>()))
             .ReturnsAsync(account);
 
-        var query = new GetAccountBalanceQuery {AccountId = new AccountId(1)};
+        var query = new GetAccountBalanceQuery(new AccountId(1), DateTime.UtcNow);
         var handler = new GetAccountBalanceQueryHandler(accountLoadMock.Object);
 
         // Act

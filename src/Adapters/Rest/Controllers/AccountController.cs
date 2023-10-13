@@ -1,39 +1,29 @@
-﻿using Me.Acheddir.Hexagonal.Application.UseCases.GetAccountBalance;
-using Me.Acheddir.Hexagonal.Application.UseCases.SendMoney;
-using Me.Acheddir.Hexagonal.Domain.Account;
-using Me.Acheddir.Hexagonal.Rest.Controllers.Base;
-using MediatR;
-
-namespace Me.Acheddir.Hexagonal.Rest.Controllers;
+﻿namespace Me.Acheddir.Hexagonal.Rest.Controllers;
 
 [Route("api/accounts")]
 public class AccountController : ApiControllerBase
 {
-    public AccountController (ISender sender) : base(sender)
-    {
-    }
+    public AccountController(ISender sender) : base(sender) { }
 
     [HttpGet("{sourceAccountId}/balance")]
-    public async Task<IActionResult> GetAccountBalance([FromRoute] long sourceAccountId)
+    public async Task<IActionResult> GetAccountBalance([FromRoute] long sourceAccountId, [FromQuery] DateTime baselineDate)
     {
-        var query = new GetAccountBalanceQuery { AccountId = new AccountId(sourceAccountId)};
+        var query = new GetAccountBalanceQuery(new AccountId(sourceAccountId), baselineDate);
         var result = await Sender.Send(query);
 
-        return result.IsSuccess ? Ok(result.Value) : BadRequest(result.Errors);
+        return result.IsSuccess
+            ? Ok(new { balance = result.Value.Amount })
+            : BadRequest(result.Errors);
     }
 
     [HttpPost("{sourceAccountId}/send")]
-    public async Task<IActionResult> SendMoney(
-        [FromRoute] long sourceAccountId,
-        [FromQuery] long targetAccountId,
+    public async Task<IActionResult> SendMoney([FromRoute] long sourceAccountId, [FromQuery] long targetAccountId,
         [FromQuery] long amount)
     {
-        var command = new SendMoneyCommand
-        {
-            SourceAccountId = new AccountId(sourceAccountId),
-            TargetAccountId = new AccountId(targetAccountId),
-            Amount = Money.Of(amount)
-        };
+        var command = new SendMoneyCommand(
+            new AccountId(sourceAccountId),
+            new AccountId(targetAccountId),
+            Money.Of(amount));
 
         var result = await Sender.Send(command);
 

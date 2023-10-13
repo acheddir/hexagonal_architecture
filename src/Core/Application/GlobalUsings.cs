@@ -2,7 +2,8 @@
 global using Microsoft.Extensions.Options;
 global using System.Reflection;
 global using System.Runtime.Serialization;
-
+global using FluentValidation;
+global using MediatR;
 global using Me.Acheddir.Hexagonal.Application.Exceptions;
 global using Me.Acheddir.Hexagonal.Application.Ports.Driven;
 global using Me.Acheddir.Hexagonal.Domain.Account;

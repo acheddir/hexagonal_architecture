@@ -1,2 +1,9 @@
-﻿global using Me.Acheddir.Hexagonal.Application.UseCases.SendMoney;
+﻿global using FluentValidation;
+global using Me.Acheddir.Hexagonal.Application.Common.Behaviors;
+global using MediatR;
+global using Microsoft.EntityFrameworkCore;
 global using Me.Acheddir.Hexagonal.SharedKernel.Ports.Driven;
+global using Me.Acheddir.Hexagonal.Application.UseCases.SendMoney;
+global using Me.Acheddir.Hexagonal.Persistence.Account;
+global using Me.Acheddir.Hexagonal.Persistence.Account.Repositories;
+global using Me.Acheddir.Hexagonal.SharedKernel.Domain;
