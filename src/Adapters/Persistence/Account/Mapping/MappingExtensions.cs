@@ -2,7 +2,9 @@
 
 public static class MappingExtensions
 {
-    public static Domain.Account.Account MapToDomainAccount(this (AccountEntity Account, List<ActivityEntity> Activities, long WitdhdrawalBalance, long DepositBalance) sources)
+    public static Domain.Account.Account MapToDomainAccount(
+        this (AccountEntity Account, List<ActivityEntity> Activities, long WitdhdrawalBalance, long DepositBalance)
+            sources)
     {
         var baselineBalance =
             Money.Subtract(Money.Of(sources.DepositBalance), Money.Of(sources.WitdhdrawalBalance));
@@ -19,16 +21,5 @@ public static class MappingExtensions
         var activityWindow = new ActivityWindow(activities);
 
         return Domain.Account.Account.WithId(new AccountId(sources.Account.Id), baselineBalance, activityWindow);
-    }
-
-    public static ActivityEntity MapToActivityEntity(this Activity activity)
-    {
-        return new ActivityEntity(
-            activity.Id?.Id ?? 0,
-            activity.OwnerAccountId?.Id ?? 0,
-            activity.SourceAccountId?.Id ?? 0,
-            activity.TargetAccountId?.Id ?? 0,
-            activity.Timestamp,
-            activity.Money.Amount);
     }
 }

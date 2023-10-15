@@ -9,16 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb5d0758-6ade-4a0d-8c90-275cadfc27c4" name="Changes" comment="">
+    <list default="true" id="fb5d0758-6ade-4a0d-8c90-275cadfc27c4" name="Changes" comment="feat: persist activities">
+      <change afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Mapping/ActivityMapper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Migrations/20231015183751_InitialCreate.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Migrations/20231015183751_InitialCreate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.hexagonal_architecture/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/AccountPersistenceAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/AccountPersistenceAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Entities/AccountEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Entities/AccountEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Entities/ActivityEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Entities/ActivityEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Mapping/AccountMapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Mapping/AccountMapper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Mapping/MappingExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Mapping/MappingExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Repositories/AccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Repositories/AccountRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommandValidator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommandValidator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/Domain/Account/Activity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Domain/Account/Activity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/SharedKernel/Domain/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/SharedKernel/Domain/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Migrations/20231013180904_InitialCreate.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Migrations/20231013180904_InitialCreate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Repositories/ActivityRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Persistence/Account/Repositories/ActivityRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapters/Rest/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Adapters/Rest/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Application/UseCases/GetAccountBalance/GetAccountBalanceQueryHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/GetAccountBalance/GetAccountBalanceQueryHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/Application/UseCases/SendMoney/SendMoneyCommandHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +37,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa813094324f408e8047b0dda3853621b1d878/1b/76085b53/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/aa813094324f408e8047b0dda3853621b1d878/2e/1e36ec11/DateTimeOffset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/source/repos/tutos/.NET/hexagonal_architecture/src/Adapters/Persistence/Account/Mapping/AccountMapper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -48,30 +55,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Abderrahman\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Abderrahman\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Abderrahman\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Abderrahman\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Abderrahman\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\Abderrahman\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Host: https">
     <configuration name="Host: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/src/Host/Host.csproj" />
@@ -133,7 +140,7 @@
       <workItem from="1697122444523" duration="3176000" />
       <workItem from="1697144627383" duration="7689000" />
       <workItem from="1697210553725" duration="18206000" />
-      <workItem from="1697327013309" duration="879000" />
+      <workItem from="1697327013309" duration="7528000" />
     </task>
     <task id="LOCAL-00001" summary="feat: persistence adapter with ef core">
       <option name="closed" value="true" />
@@ -143,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697228967612</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: persist activities">
+      <option name="closed" value="true" />
+      <created>1697391437752</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697391437752</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +179,26 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feat: persistence adapter with ef core" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: persistence adapter with ef core" />
+    <MESSAGE value="feat: persist activities" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: persist activities" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/src/Adapters/Rest/Controllers/AccountController.cs</url>
+          <line>29</line>
+          <properties documentPath="D:\source\repos\tutos\.NET\hexagonal_architecture\src\Adapters\Rest\Controllers\AccountController.cs" initialLine="29" containingFunctionPresentation="Method 'SendMoney'">
+            <startOffsets>
+              <option value="1061" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1121" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

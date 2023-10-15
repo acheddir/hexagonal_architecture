@@ -30,7 +30,7 @@ public class ActivityRepository : IActivityRepository
     public Task<long> GetWithdrawalBalanceUntil(long accountId, DateTime baselineDate, CancellationToken token)
     {
         return _context.Activities
-            .Where(a => a.TargetAccountId == accountId &&
+            .Where(a => a.SourceAccountId == accountId &&
                         a.OwnerAccountId == accountId &&
                         a.Timestamp < baselineDate)
             .SumAsync(a => a.Amount, cancellationToken: token);
@@ -39,7 +39,7 @@ public class ActivityRepository : IActivityRepository
     public Task<long> GetDepositBalanceUntil(long accountId, DateTime baselineDate, CancellationToken token)
     {
         return _context.Activities
-            .Where(a => a.SourceAccountId == accountId &&
+            .Where(a => a.TargetAccountId == accountId &&
                         a.OwnerAccountId == accountId &&
                         a.Timestamp < baselineDate)
             .SumAsync(a => a.Amount, cancellationToken: token);

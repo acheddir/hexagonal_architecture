@@ -21,25 +21,21 @@ public sealed class SendMoneyCommandHandler : ICommandHandler<SendMoneyCommand>
     
     public async Task<Result> Handle(SendMoneyCommand command, CancellationToken cancellationToken)
     {
-        ArgumentNullException.ThrowIfNull(command.SourceAccountId, nameof(command.SourceAccountId));
-        ArgumentNullException.ThrowIfNull(command.TargetAccountId, nameof(command.TargetAccountId));
-        ArgumentNullException.ThrowIfNull(command.Amount, nameof(command.Amount));
-        
         CheckThreshold(command);
-        
+
         var baselineDate = UtcNow.AddDays(-10);
 
-        var sourceAccount = await _accountLoad.LoadAccountAsync(command.SourceAccountId, baselineDate, cancellationToken);
-        var targetAccount = await _accountLoad.LoadAccountAsync(command.TargetAccountId, baselineDate, cancellationToken);
+        var sourceAccount = await _accountLoad.LoadAccountAsync(command.SourceAccountId!, baselineDate, cancellationToken);
+        var targetAccount = await _accountLoad.LoadAccountAsync(command.TargetAccountId!, baselineDate, cancellationToken);
 
         var sourceAccountId = sourceAccount.GetId()
                               ?? throw new IllegalAccountStateException("Expected non-null source account ID");
         var targetAccountId = targetAccount.GetId()
                               ?? throw new IllegalAccountStateException("Expected non-null target account ID");
-        
+
         await _accountLock.LockAccountAsync(sourceAccountId, cancellationToken);
 
-        var withdrawalIsSuccessful = sourceAccount.Withdraw(command.Amount, targetAccountId);
+        var withdrawalIsSuccessful = sourceAccount.Withdraw(command.Amount!, targetAccountId);
         if (!withdrawalIsSuccessful)
         {
             await _accountLock.ReleaseAccountAsync(sourceAccountId, cancellationToken);
@@ -47,8 +43,8 @@ public sealed class SendMoneyCommandHandler : ICommandHandler<SendMoneyCommand>
         }
 
         await _accountLock.LockAccountAsync(targetAccountId, cancellationToken);
-        var depositIsSuccessful = targetAccount.Deposit(command.Amount, sourceAccountId);
-        
+        var depositIsSuccessful = targetAccount.Deposit(command.Amount!, sourceAccountId);
+
         if (!depositIsSuccessful)
         {
             await _accountLock.ReleaseAccountAsync(sourceAccountId, cancellationToken);
@@ -64,7 +60,7 @@ public sealed class SendMoneyCommandHandler : ICommandHandler<SendMoneyCommand>
 
         return Result.Ok();
     }
-    
+
     private void CheckThreshold(SendMoneyCommand command)
     {
         if (command.Amount!.IsGreaterThan(_moneyTransferOptions.MaximumTransferThreshold))

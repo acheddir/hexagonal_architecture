@@ -27,6 +27,6 @@ public class AccountController : ApiControllerBase
 
         var result = await Sender.Send(command);
 
-        return result.IsSuccess ? Ok() : BadRequest(result.Errors);
+        return result.IsSuccess ? Ok() : BadRequest(result.Reasons);
     }
 }

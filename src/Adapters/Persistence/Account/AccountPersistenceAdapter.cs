@@ -53,7 +53,7 @@ public class AccountPersistenceAdapter : IAccountLoad, IAccountLock, IAccountUpd
     {
         foreach (var activity in account.ActivityWindow.GetActivities())
         {
-            if (activity.Id != null) continue;
+            if (activity.Id != null && activity.Id.Id != 0) continue;
 
             var activityEntity = _mapper.Map<ActivityEntity>(activity);
             _accountRepository.Save(activityEntity);

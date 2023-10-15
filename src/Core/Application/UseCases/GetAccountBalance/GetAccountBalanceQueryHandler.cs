@@ -11,10 +11,8 @@ public sealed class GetAccountBalanceQueryHandler : IQueryHandler<GetAccountBala
     
     public async Task<Result<Money>> Handle(GetAccountBalanceQuery query, CancellationToken cancellationToken)
     {
-        ArgumentNullException.ThrowIfNull(query.AccountId, nameof(query.AccountId));
-
         var account = await _accountLoad
-            .LoadAccountAsync(query.AccountId, query.BaselineDate.UtcDateTime, cancellationToken);
+            .LoadAccountAsync(query.AccountId!, query.BaselineDate.UtcDateTime, cancellationToken);
 
         var balance = account.CalculateBalance();
 

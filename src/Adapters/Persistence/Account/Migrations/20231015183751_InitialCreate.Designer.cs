@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Me.Acheddir.Hexagonal.Persistence.Account.Migrations
 {
     [DbContext(typeof(AccountDbContext))]
-    [Migration("20231013180904_InitialCreate")]
+    [Migration("20231015183751_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
