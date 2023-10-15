@@ -20,4 +20,15 @@ public static class MappingExtensions
 
         return Domain.Account.Account.WithId(new AccountId(sources.Account.Id), baselineBalance, activityWindow);
     }
+
+    public static ActivityEntity MapToActivityEntity(this Activity activity)
+    {
+        return new ActivityEntity(
+            activity.Id?.Id ?? 0,
+            activity.OwnerAccountId?.Id ?? 0,
+            activity.SourceAccountId?.Id ?? 0,
+            activity.TargetAccountId?.Id ?? 0,
+            activity.Timestamp,
+            activity.Money.Amount);
+    }
 }

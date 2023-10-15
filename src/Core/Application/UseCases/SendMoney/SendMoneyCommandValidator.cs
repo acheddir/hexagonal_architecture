@@ -10,7 +10,7 @@ public class SendMoneyCommandValidator : AbstractValidator<SendMoneyCommand>
         RuleFor(c => c.Amount).Custom((money, context) =>
         {
             if (money is not null && !money.IsPositive())
-                context.AddFailure("Sent money amount should be positive.");
+                context.AddFailure("Money amount should be positive.");
         });
     } 
 }

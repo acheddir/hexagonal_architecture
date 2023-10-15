@@ -2,7 +2,7 @@
 
 public class Activity : Entity<ActivityId>
 {
-    private AccountId? OwnerAccountId { get; }
+    public AccountId? OwnerAccountId { get; }
     public AccountId? SourceAccountId { get; }
     public AccountId? TargetAccountId { get; }
     public DateTime Timestamp { get; }

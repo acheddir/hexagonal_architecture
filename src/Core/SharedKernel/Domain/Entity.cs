@@ -13,7 +13,7 @@ public abstract class Entity<T>
         Id = id;
     }
 
-    protected T? Id { get; }
+    public T? Id { get; }
 
     public override bool Equals(object? obj)
     {

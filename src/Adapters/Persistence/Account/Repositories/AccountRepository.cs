@@ -3,6 +3,7 @@
 public interface IAccountRepository : IRepository
 {
     Task<AccountEntity?> GetAccountById(long accountIdId, CancellationToken token);
+    void Save(ActivityEntity activityEntity);
 }
 
 public class AccountRepository : IAccountRepository
@@ -17,5 +18,10 @@ public class AccountRepository : IAccountRepository
     public Task<AccountEntity?> GetAccountById(long accountId, CancellationToken token)
     {
         return _context.Accounts.FirstOrDefaultAsync(a => a.Id == accountId, cancellationToken: token);
+    }
+
+    public void Save(ActivityEntity activityEntity)
+    {
+        _context.Activities.Add(activityEntity);
     }
 }

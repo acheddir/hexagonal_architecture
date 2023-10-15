@@ -6,5 +6,8 @@ public class AccountMapper : Profile
     {
         CreateMap<(AccountEntity Account, List<ActivityEntity> Activities, long WitdhdrawalBalance, long DepositBalance), Domain.Account.Account>()
             .ConstructUsing(s => s.MapToDomainAccount());
+
+        CreateMap<Activity, ActivityEntity>()
+            .ConstructUsing(s => s.MapToActivityEntity());
     }
 }

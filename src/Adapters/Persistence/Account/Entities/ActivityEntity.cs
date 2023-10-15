@@ -2,6 +2,16 @@
 
 public class ActivityEntity
 {
+    public ActivityEntity(long id, long ownerAccountId, long sourceAccountId, long targetAccountId, DateTime timestamp, long amount)
+    {
+        Id = id;
+        OwnerAccountId = ownerAccountId;
+        SourceAccountId = sourceAccountId;
+        TargetAccountId = targetAccountId;
+        Timestamp = timestamp;
+        Amount = amount;
+    }
+
     [Key]
     public long Id { get; set; }
     public long OwnerAccountId { get; set; }

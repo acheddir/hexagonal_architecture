@@ -49,8 +49,16 @@ public class AccountPersistenceAdapter : IAccountLoad, IAccountLock, IAccountUpd
         await _unitOfWork.Commit();
     }
 
-    public Task UpdateActivitiesAsync(Domain.Account.Account account, CancellationToken token)
+    public async Task UpdateActivitiesAsync(Domain.Account.Account account, CancellationToken token)
     {
-        throw new NotImplementedException();
+        foreach (var activity in account.ActivityWindow.GetActivities())
+        {
+            if (activity.Id != null) continue;
+
+            var activityEntity = _mapper.Map<ActivityEntity>(activity);
+            _accountRepository.Save(activityEntity);
+        }
+
+        await _unitOfWork.Commit();
     }
 }
